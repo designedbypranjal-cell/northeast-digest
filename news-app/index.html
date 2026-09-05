@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Northeast Digest — Assamese · Hindi · English News</title>
+  <meta name="description" content="A no-politics news digest in Assamese/Assam-regional, Hindi, and English — culture, business, sports, tech and science, auto-updated." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📰</text></svg>" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <h1>Northeast Digest</h1>
+      <p class="tagline">Assamese · Hindi · English — culture, business, sports &amp; tech. No political news.</p>
+      <div class="meta-row">
+        <span id="updated-at" class="updated">Loading…</span>
+        <button id="refresh-btn" class="refresh-btn" title="Reload latest data.json">↻ Refresh</button>
+      </div>
+    </div>
+  </header>
+
+  <nav class="tabs wrap" id="tabs">
+    <button class="tab active" data-section="assamese">Assamese / Assam</button>
+    <button class="tab" data-section="hindi">Hindi</button>
+    <button class="tab" data-section="english">English</button>
+  </nav>
+
+  <main class="wrap" id="content">
+    <p class="status" id="status">Loading news…</p>
+  </main>
+
+  <footer class="wrap site-footer">
+    <p>
+      Sources are linked to the original publisher for every story — nothing here is rehosted or embedded from another portal.
+      Refreshed automatically every few hours by a scheduled job.
+      Political/government stories are filtered out on a best-effort basis and a few may occasionally slip through.
+    </p>
+    <p><a href="https://github.com" id="repo-link">View source</a></p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
