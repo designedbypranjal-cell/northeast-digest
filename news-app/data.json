@@ -83,6 +83,29 @@
         "source": "Euronews Business",
         "published": "2026-09-04T00:00:00+00:00"
       }
+    ],
+    "world": [
+      {
+        "title": "Life uses 4 DNA letters — scientists just made 8 work",
+        "summary": "UC San Diego researchers showed that RNA polymerase can accurately read an eight-letter genetic alphabet, doubling nature's standard four letters.",
+        "link": "https://www.sciencedaily.com/releases/2026/09/260904000310.htm",
+        "source": "ScienceDaily",
+        "published": "2026-09-04T00:00:00+00:00"
+      },
+      {
+        "title": "MIT turns bacteria into living transistors",
+        "summary": "Researchers created bacterial circuits capable of performing calculations and directing chemical signals for potential biocomputing applications.",
+        "link": "https://www.sciencedaily.com/releases/2026/09/260901070526.htm",
+        "source": "ScienceDaily",
+        "published": "2026-09-01T00:00:00+00:00"
+      },
+      {
+        "title": "Global art season kicks off with major September exhibitions worldwide",
+        "summary": "Fall exhibitions are launching across Europe, Asia and the US, including Louvre works at Tokyo's National Art Center and the Bayeux Tapestry at the British Museum.",
+        "link": "https://time.news/global-art-season-kicks-off-with-major-september-exhibitions-worldwide/",
+        "source": "Time News",
+        "published": "2026-09-04T00:00:00+00:00"
+      }
     ]
   }
 }

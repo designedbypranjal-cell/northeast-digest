@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """
-Fetches non-political news headlines in Assamese/Assam-regional, Hindi, and
-English, and writes them to data.json for the static site to display.
+Fetches non-political news headlines in Assamese/Assam-regional, Hindi,
+English (India), and World (global), and writes them to data.json for the
+static site to display.
 
 Runs server-side (in GitHub Actions), so there are no browser CORS issues.
 Designed to fail soft: if one feed is down or changes shape, it's skipped
@@ -19,9 +20,13 @@ import feedparser
 # Sources
 # ---------------------------------------------------------------------------
 # "assamese" = Assam-regional outlets (their own reporting, not aggregated).
-# "hindi" / "english" = Google News topic feeds, which already separate out
-# non-political topics (Entertainment/Business/Technology/Sports/Science) from
-# the Nation/World/Politics sections we deliberately never query.
+# "hindi" = Google News India, Hindi-language, topic feeds.
+# "english" = Google News India, English-language, topic feeds + TechCrunch.
+# "world" = Google News US/global edition topic feeds + ScienceDaily, for
+#   coverage that isn't India-specific.
+# All four are restricted to non-political topics (Entertainment/Business/
+# Technology/Sports/Science/Health) — the Nation/World-politics/Politics
+# sections are deliberately never queried in the first place.
 
 GOOGLE_NEWS_TOPICS = ["ENTERTAINMENT", "BUSINESS", "TECHNOLOGY", "SPORTS", "SCIENCE", "HEALTH"]
 
@@ -44,6 +49,14 @@ SOURCES = {
         *[
             {"name": f"Google News – {t.title()}",
              "url": google_news_feed(t, "en-IN", "IN", "IN:en")}
+            for t in GOOGLE_NEWS_TOPICS
+        ],
+    ],
+    "world": [
+        {"name": "ScienceDaily", "url": "https://www.sciencedaily.com/rss/all.xml"},
+        *[
+            {"name": f"Google News World – {t.title()}",
+             "url": google_news_feed(t, "en-US", "US", "US:en")}
             for t in GOOGLE_NEWS_TOPICS
         ],
     ],

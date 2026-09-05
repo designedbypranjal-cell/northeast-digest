@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://designedbypranjal-cell.github.io/northeast-digest/sitemap.xml
