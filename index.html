@@ -6,37 +6,60 @@
   <title>Northeast Digest — Assamese · Hindi · English News</title>
   <meta name="description" content="A no-politics news digest in Assamese/Assam-regional, Hindi, and English — culture, business, sports, tech and science, auto-updated." />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📰</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header class="site-header">
-    <div class="wrap">
-      <h1>Northeast Digest</h1>
-      <p class="tagline">Assamese · Hindi · English — culture, business, sports &amp; tech. No political news.</p>
-      <div class="meta-row">
-        <span id="updated-at" class="updated">Loading…</span>
-        <button id="refresh-btn" class="refresh-btn" title="Reload latest data.json">↻ Refresh</button>
+  <div class="backdrop" aria-hidden="true"></div>
+
+  <header class="site-header" id="site-header">
+    <div class="wrap header-inner">
+      <div class="brand">
+        <span class="brand-mark">📰</span>
+        <div>
+          <h1>Northeast Digest</h1>
+          <p class="tagline">Assamese · Hindi · English — culture, business, sports &amp; tech. No politics.</p>
+        </div>
       </div>
+
+      <div class="search-row">
+        <div class="search-box">
+          <svg class="search-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+            <path fill="currentColor" d="M15.5 14h-.79l-.28-.27a6.47 6.47 0 0 0 1.57-4.23 6.5 6.5 0 1 0-6.5 6.5 6.47 6.47 0 0 0 4.23-1.57l.27.28v.79l5 5L20.49 19l-5-5zm-6 0a4.5 4.5 0 1 1 0-9 4.5 4.5 0 0 1 0 9z"/>
+          </svg>
+          <input id="search-input" type="search" placeholder="Search headlines across all languages…" autocomplete="off" />
+          <button id="search-clear" class="search-clear" title="Clear search" hidden>✕</button>
+        </div>
+        <button id="refresh-btn" class="refresh-btn" title="Reload latest data.json">
+          <svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path fill="currentColor" d="M12 5V2L8 6l4 4V7a5 5 0 1 1-5 5H5a7 7 0 1 0 7-7z"/></svg>
+          Refresh
+        </button>
+      </div>
+
+      <nav class="tabs" id="tabs">
+        <button class="tab active" data-section="assamese"><span class="dot dot-assamese"></span>Assamese / Assam</button>
+        <button class="tab" data-section="hindi"><span class="dot dot-hindi"></span>Hindi</button>
+        <button class="tab" data-section="english"><span class="dot dot-english"></span>English</button>
+      </nav>
     </div>
   </header>
 
-  <nav class="tabs wrap" id="tabs">
-    <button class="tab active" data-section="assamese">Assamese / Assam</button>
-    <button class="tab" data-section="hindi">Hindi</button>
-    <button class="tab" data-section="english">English</button>
-  </nav>
-
-  <main class="wrap" id="content">
-    <p class="status" id="status">Loading news…</p>
+  <main class="wrap" id="main">
+    <p class="updated" id="updated-at">Loading…</p>
+    <div id="content">
+      <p class="status" id="status">Loading news…</p>
+    </div>
   </main>
 
   <footer class="wrap site-footer">
     <p>
-      Sources are linked to the original publisher for every story — nothing here is rehosted or embedded from another portal.
+      Every story links to the original publisher — nothing here is rehosted or embedded from another portal.
       Refreshed automatically every few hours by a scheduled job.
       Political/government stories are filtered out on a best-effort basis and a few may occasionally slip through.
     </p>
-    <p><a href="https://github.com" id="repo-link">View source</a></p>
+    <p><a href="https://github.com" id="repo-link">View source on GitHub</a></p>
   </footer>
 
   <script src="script.js"></script>
